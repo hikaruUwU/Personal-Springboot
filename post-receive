@@ -10,6 +10,10 @@ echo "checking out to deploy directory"
 
 cd "${DEPLOY_DIR}" || exit
 
+chmod u+x ${DEPLOY_DIR}/dev_run.sh
+
+chmod u+x ${DEPLOY_DIR}/mvnw
+
 /usr/bin/sudo /usr/bin/systemctl restart project.service
 
 echo "restarted systemctl of project"
