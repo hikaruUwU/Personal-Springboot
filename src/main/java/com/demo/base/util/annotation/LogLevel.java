@@ -6,4 +6,5 @@ public enum LogLevel {
     TRACE,
     WARN,
     ERROR,
+    FATAL
 }

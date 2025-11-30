@@ -2,6 +2,7 @@ package com.demo.base.aspect;
 
 import com.demo.base.util.annotation.InjectKey;
 import com.demo.base.util.annotation.InjectVia;
+import jakarta.annotation.PostConstruct;
 import org.apache.catalina.util.RateLimiter;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -18,18 +19,30 @@ import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Map;
 
 @Aspect
 @Component
-public class UnifiedResourceInjector{
+public class UnifiedResourceInjector {
     private final ApplicationContext applicationContext;
     private static final Map<Method, Object[]> REFLECT_CACHE = new SoftHashMap<>();
     private static final Map<Class<?>, Field> INJECT_KEY_CACHE = new SoftHashMap<>();
 
+    private final AnnotationScanner annotationScanner;
+
     @Autowired
-    public UnifiedResourceInjector(ApplicationContext applicationContext) {
+    public UnifiedResourceInjector(ApplicationContext applicationContext, AnnotationScanner annotationScanner) {
         this.applicationContext = applicationContext;
+        this.annotationScanner = annotationScanner;
+    }
+
+    @PostConstruct
+    public void init() {
+        Thread.ofVirtual().name("UnifiedResourceInjectorInit").unstarted(() -> {
+            Map<Class<?>, List<Field>> classListMap = annotationScanner.scanFieldAnnotation(InjectKey.class);
+            classListMap.forEach((key, value) -> INJECT_KEY_CACHE.put(key, value.getFirst()));
+        }).start();
     }
 
     @Around("execution(* *.*(.., @com.demo.base.util.annotation.InjectVia (*), ..))")
