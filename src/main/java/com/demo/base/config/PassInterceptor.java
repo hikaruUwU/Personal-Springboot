@@ -14,7 +14,13 @@ public class PassInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler) throws Exception {
-        HandlerMethod handlerMethod = (HandlerMethod) handler;
+        HandlerMethod handlerMethod = null;
+
+        if (handler instanceof HandlerMethod)
+            handlerMethod = (HandlerMethod) handler;
+        else
+            return true;
+
         RequiredSession restrictor = handlerMethod.getMethod().getAnnotation(RequiredSession.class);
 
         if (restrictor == null)
@@ -23,11 +29,10 @@ public class PassInterceptor implements HandlerInterceptor {
         if (restrictor != null && request.getSession(false) == null) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return false;
-        } else {
+        } else
 //            if (request.getSession(false) != null)
 //                RequestChain.local.set(request.getSession(false).getAttribute("user"));
             return true;
-        }
     }
 
     @Override

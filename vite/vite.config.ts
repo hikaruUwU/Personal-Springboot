@@ -43,6 +43,6 @@ export default defineConfig({
     },
     build:{
         emptyOutDir: true,
-        outDir: '../openresty/html'
+        outDir: '../src/main/resources/static'
     }
 })

@@ -1,18 +1,21 @@
 com\demo\base\util\annotation\ResourceFinder.class
 com\demo\base\mapper\UserMapper.class
 com\demo\base\domain\response\Result.class
+com\demo\base\util\annotation\RequiredSession.class
 com\demo\base\domain\response\Result$ResultBuilder.class
 com\demo\base\util\annotation\NoInstancePlaceHolderResourceFinder.class
+com\demo\base\util\annotation\Reject.class
 com\demo\base\aspect\UnifiedResourceInjector$1.class
 com\demo\base\domain\User$UserBuilderImpl.class
 com\demo\base\util\annotation\InjectKey.class
 com\demo\base\domain\response\Result$ResultBuilderImpl.class
 com\demo\base\util\annotation\LogLevel.class
 com\demo\base\util\annotation\InjectType.class
+com\demo\base\util\annotation\RateLimiter.class
 com\demo\base\config\GlobalErrorWebExceptionHandler.class
+com\demo\base\aspect\AnnotationScanner.class
 com\demo\base\config\SQLLog4j2Config.class
 com\demo\base\repository\UserRepository.class
-com\demo\base\util\annotation\RestrictAccess.class
 com\demo\base\aspect\LogWrapper.class
 com\demo\base\util\annotation\LogRange.class
 com\demo\base\BaseApplication.class
@@ -26,4 +29,3 @@ com\demo\base\aspect\UnifiedResourceInjector.class
 com\demo\base\controller\AuthController.class
 com\demo\base\domain\User$UserBuilder.class
 com\demo\base\util\RequestChain.class
-com\demo\base\util\AsyncExecutor.class

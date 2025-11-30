@@ -2,7 +2,7 @@
 </script>
 
 <template>
-
+  <p>[login page]</p>
 </template>
 
 <style scoped lang="scss">
