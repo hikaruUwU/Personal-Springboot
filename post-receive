@@ -1,0 +1,15 @@
+#!/bin/sh
+
+DEPLOY_DIR="/var/www/project"
+
+unset GIT_DIR
+
+git --work-tree=${DEPLOY_DIR} checkout -f
+
+echo "checking out to deploy directory"
+
+cd "${DEPLOY_DIR}" || exit
+
+/usr/bin/sudo /usr/bin/systemctl restart project.service
+
+echo "restarted systemctl of project"

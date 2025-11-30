@@ -1,0 +1,15 @@
+[Unit]
+Description=Automatic Deployment for Project
+After=network.target
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/project
+Environment="PATH=/root/.nvm/versions/node/v24.11.1/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/var/www/project/dev_run.sh
+Restart=always
+RestartSec=10s
+StandardOutput=journal
+StandardError=journal
+[Install]
+WantedBy=multi-user.target
