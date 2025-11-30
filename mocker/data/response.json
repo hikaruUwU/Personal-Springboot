@@ -1,0 +1,36 @@
+{
+  "api/user/info": {
+    "status": 200,
+    "user_id": 1001,
+    "username": "zhangsan",
+    "roles": [
+      "admin",
+      "viewer"
+    ],
+    "last_login": "2025-11-11T13:50:00Z"
+  },
+  "api/products/list": {
+    "total_count": 3,
+    "products": [
+      {
+        "id": "P001",
+        "name": "Laptop",
+        "price": 999.99
+      },
+      {
+        "id": "P002",
+        "name": "Mouse",
+        "price": 25.00
+      }
+    ]
+  },
+  "status/health": {
+    "service_status": "UP",
+    "database_connection": "OK",
+    "timestamp": 1731333000
+  },
+  "error/404": {
+    "code": 404,
+    "message": "The requested resource was not found on the mock server."
+  }
+}
