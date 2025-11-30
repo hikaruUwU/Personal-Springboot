@@ -16,7 +16,7 @@ echo ">> [STEP 3/4] Cleaning and Packaging Java..."
 ./mvnw clean package
 
 echo ">> [STEP 4/4] Running up Java..."
-java -jar /target/base-0.0.1-SNAPSHOT.jar
+java -jar ./target/base-0.0.1-SNAPSHOT.jar
 
 echo "------------------------------------------------"
 echo "---Finished Update Auto-Build Process ---"
