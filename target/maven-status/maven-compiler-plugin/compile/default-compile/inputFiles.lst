@@ -23,8 +23,6 @@ C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\LogRange.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\Monitor.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\NoInstancePlaceHolderResourceFinder.java
-C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\RateLimiter.java
-C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\Reject.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\RequiredSession.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\annotation\ResourceFinder.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\util\RequestChain.java

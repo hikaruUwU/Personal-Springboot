@@ -69,7 +69,7 @@ public class APIMetaDataCollector implements ApplicationListener<ContextRefreshe
                     }));
                 }
             });
-            log.info("APIMetaDataCollection finished");
+            log.info("APIMetaDataCollection finished, scanned {} restful endpoint(s)", apiRegistry.size());
         }).start();
     }
 
@@ -103,6 +103,9 @@ public class APIMetaDataCollector implements ApplicationListener<ContextRefreshe
                         map.put(method.getName(), value);
                     else
                         continue;
+
+                if (value instanceof String v && v.isBlank())
+                    continue;
 
                 map.put(method.getName(), value);
             } catch (Exception ignored) {

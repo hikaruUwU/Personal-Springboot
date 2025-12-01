@@ -4,7 +4,6 @@ com\demo\base\domain\response\Result.class
 com\demo\base\util\annotation\RequiredSession.class
 com\demo\base\domain\response\Result$ResultBuilder.class
 com\demo\base\util\annotation\NoInstancePlaceHolderResourceFinder.class
-com\demo\base\util\annotation\Reject.class
 com\demo\base\aspect\UnifiedResourceInjector$1.class
 com\demo\base\doc\EnableAPIScanner.class
 com\demo\base\domain\User$UserBuilderImpl.class
@@ -15,7 +14,6 @@ com\demo\base\doc\ApiScannerConfiguration.class
 com\demo\base\doc\ApiMetadata.class
 com\demo\base\doc\APIMetaDataCollector.class
 com\demo\base\util\annotation\InjectType.class
-com\demo\base\util\annotation\RateLimiter.class
 com\demo\base\config\GlobalErrorWebExceptionHandler.class
 com\demo\base\aspect\AnnotationScanner.class
 com\demo\base\config\SQLLog4j2Config.class

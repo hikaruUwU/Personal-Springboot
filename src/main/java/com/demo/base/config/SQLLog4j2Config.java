@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class SQLLog4j2Config {
     @PostConstruct
     public void init() {
-        AuditManager.setAuditEnable(false);
+        AuditManager.setAuditEnable(true);
 
         AuditManager.setMessageCollector(auditMessage -> log.info("SQL PLAN >>> {}", auditMessage));
     }
