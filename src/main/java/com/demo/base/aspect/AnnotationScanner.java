@@ -75,7 +75,6 @@ public class AnnotationScanner {
                 throw new RuntimeException("Cannot Load class " + c.getBeanClassName(), e);
             }
         });
-
         return resultMap;
     }
 }
