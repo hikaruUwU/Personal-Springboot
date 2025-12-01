@@ -7,6 +7,10 @@ C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\config\SQLLog4j2Config.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\config\WebConfig.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\controller\AuthController.java
+C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\doc\ApiMetadata.java
+C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\doc\APIMetaDataCollector.java
+C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\doc\ApiScannerConfiguration.java
+C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\doc\EnableAPIScanner.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\domain\response\Result.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\domain\User.java
 C:\Users\uwufi\IdeaProjects\Personal-Basement-master\src\main\java\com\demo\base\mapper\UserMapper.java
