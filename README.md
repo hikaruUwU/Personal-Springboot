@@ -84,7 +84,9 @@ Configuration visit application.properties.
 
 Verify the backend is running on a non-conflicting port (e.g., 8081).
 
-3. Deployment ( development enviroment )
+3. Hot update Deployment ( development enviroment )
+
+Install git.
 
 Switch user to projectRunnerOnlyUser for security and install middlewares & dependecies.
 
