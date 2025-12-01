@@ -133,7 +133,7 @@ public class LogWrapper {
                 val.append(" #SUCCESS");
 
         } else {
-            val.append(" Error ").append(error.getMessage());
+            val.append(" #Error ").append(error.getMessage());
 
             if (ranges.contains(LogRange.ERROR))
                 val.append(" #ERROR");

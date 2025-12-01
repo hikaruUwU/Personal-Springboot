@@ -22,6 +22,7 @@ public class AuthController {
     }
 
     @PostMapping("/auth")
+    @Monitor(level = LogLevel.INFO)
     public Result<Void> authenticate(@RequestBody @Valid User user) {
         return authService.login(user);
     }
