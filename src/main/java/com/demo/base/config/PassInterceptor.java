@@ -13,8 +13,8 @@ import org.springframework.web.servlet.HandlerInterceptor;
 public class PassInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler) throws Exception {
-        HandlerMethod handlerMethod = null;
+    public boolean preHandle(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler) {
+        HandlerMethod handlerMethod;
 
         if (handler instanceof HandlerMethod)
             handlerMethod = (HandlerMethod) handler;
@@ -30,8 +30,6 @@ public class PassInterceptor implements HandlerInterceptor {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return false;
         } else
-//            if (request.getSession(false) != null)
-//                RequestChain.local.set(request.getSession(false).getAttribute("user"));
             return true;
     }
 

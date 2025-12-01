@@ -3,7 +3,6 @@ package com.demo.base.aspect;
 import com.demo.base.util.annotation.InjectKey;
 import com.demo.base.util.annotation.InjectVia;
 import jakarta.annotation.PostConstruct;
-import org.apache.catalina.util.RateLimiter;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

@@ -11,6 +11,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BaseApplication {
     public static void main(String[] args) {
         SpringApplication.run(BaseApplication.class, args);
-        log.info("App is Running on {} {}, PWD = {}",System.getProperty("os.name"),System.getProperty("os.arch"),System.getProperty("user.dir"));
     }
 }

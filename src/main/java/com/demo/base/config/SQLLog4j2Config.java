@@ -12,6 +12,6 @@ public class SQLLog4j2Config {
     public void init() {
         AuditManager.setAuditEnable(false);
 
-        AuditManager.setMessageCollector(auditMessage -> log.info("SQL >>> {}", auditMessage));
+        AuditManager.setMessageCollector(auditMessage -> log.info("SQL PLAN >>> {}", auditMessage));
     }
 }

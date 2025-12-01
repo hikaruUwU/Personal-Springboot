@@ -32,9 +32,4 @@ public class AuthController {
     public Result<User> logout(@InjectVia(resource = UserRepository.class, via = InjectType.REPOSITORY) User user) {
         return Result.success(user);
     }
-
-    @GetMapping("/status")
-    public Result<Integer> test(String valve,User user) {
-        return Result.success(valve);
-    }
 }
