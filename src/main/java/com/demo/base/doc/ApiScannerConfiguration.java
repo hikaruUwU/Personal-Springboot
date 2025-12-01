@@ -11,8 +11,6 @@ import org.springframework.web.servlet.function.ServerResponse;
 import static org.springframework.web.servlet.function.RequestPredicates.GET;
 import static org.springframework.web.servlet.function.RouterFunctions.route;
 
-
-@Configuration
 public class ApiScannerConfiguration{
     @Value("${api.exposure.path}")
     private String BASEMENT = "/api";
