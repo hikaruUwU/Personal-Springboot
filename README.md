@@ -84,3 +84,18 @@ Configuration visit application.properties.
 
 Verify the backend is running on a non-conflicting port (e.g., 8081).
 
+3. Deployment ( development enviroment )
+
+Switch user to projectRunnerOnlyUser for security and install middlewares & dependecies.
+
+Create a bare repository and set user's shell to git shell.
+
+Move post-receive to your test env linux and modify ${DEPLOY_DIR}.
+
+Manual git --work-tree=${DEPLOY_DIR} checkout -f once, chown -R runner:runner(git:git / projectOnlyUser) to currentWorkDIR.
+
+Move project.service to /etc/systemd/system and modify WorkingDirectory & Environment to register it as a system service.(this project using NVM).
+
+Git add remote project@dev.machine:repo.
+
+Now every git pull to dev.machine will trigger hot updating.
