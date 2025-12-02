@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 DEPLOY_DIR="$(dirname "$PWD")/../instance"
 PID_FILE="${DEPLOY_DIR}/pid.log"
 LOG_FILE="${DEPLOY_DIR}/app.log"
