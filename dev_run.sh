@@ -10,15 +10,11 @@ echo "------------------------------------------------"
 # --- NEW STEP: Check and Stop Old Service ---
 echo ">> [STEP 0/5] Checking and stopping old service on port 8080..."
 
-# Find the PID listening on port 8080.
-# We use 'fuser' as it's often simpler and readily available for this task.
-# Alternatively, you can use 'lsof -t -i :8080'.
-# Note: If the process is owned by another user (e.g., root), this command might require 'sudo'.
-PID_8080=$(lsof -t -i :8080 2>/dev/null)
+PID_8080=$(ss -tuln sport = :8080 | awk 'NR>1 {print $6}' | sed 's/.*,pid=//;s/,.*//' | head -n 1 2>/dev/null)
 
 if [ -n "$PID_8080" ]; then
     echo "Old process found on port 8080 (PID: $PID_8080). Attempting graceful shutdown (SIGTERM)..."
-    kill -15 "$PID_8080"
+    kill -9 "$PID_8080"
 
     # Wait for the process to stop gracefully
     sleep 5
