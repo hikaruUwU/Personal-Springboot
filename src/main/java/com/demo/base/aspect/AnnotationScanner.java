@@ -49,8 +49,7 @@ public class AnnotationScanner {
                     if (field.isAnnotationPresent(type))
                         result.computeIfAbsent(target, k -> new ArrayList<>()).add(field);
                 });
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
+            } catch (ClassNotFoundException ignored) {
             }
         });
         return result;
@@ -70,9 +69,7 @@ public class AnnotationScanner {
                     if (annotation != null)
                         resultMap.put(method, annotation);
                 });
-
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException("Cannot Load class " + c.getBeanClassName(), e);
+            } catch (ClassNotFoundException ignored) {
             }
         });
         return resultMap;
