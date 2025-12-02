@@ -4,6 +4,7 @@ DEPLOY_DIR="$(dirname "$PWD")/../instance"
 PID_FILE="${DEPLOY_DIR}/pid.log"
 LOG_FILE="${DEPLOY_DIR}/app.log"
 
+
 unset GIT_DIR
 
 if [ ! -d "${DEPLOY_DIR}" ]; then
