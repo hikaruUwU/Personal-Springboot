@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#Repository name : basement
 DEPLOY_DIR="$(dirname "$PWD")/basement/instance"
 PID_FILE="${DEPLOY_DIR}/pid.log"
 LOG_FILE="${DEPLOY_DIR}/app.log"
