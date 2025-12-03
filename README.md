@@ -84,7 +84,7 @@ Configuration visit application.properties.
 
 Verify the backend is running on a non-conflicting port (e.g., 8081).
 
-3. Hot update Deployment ( development enviroment )
+3. Hot update Deployment ( development environment, simple CI/CD )
 
 Install git.
 
