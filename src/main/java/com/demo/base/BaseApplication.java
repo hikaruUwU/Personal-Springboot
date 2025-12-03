@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Log4j2
 @SpringBootApplication
-@EnableAPIScanner
+//@EnableAPIScanner
 public class BaseApplication {
     public static void main(String[] args) {
         SpringApplication.run(BaseApplication.class, args);

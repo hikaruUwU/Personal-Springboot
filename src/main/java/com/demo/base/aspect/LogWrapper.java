@@ -41,7 +41,7 @@ public class LogWrapper {
 
     @PostConstruct
     public void init() {
-        Thread.ofVirtual().name("LogWrapperInit").unstarted(() -> {
+        Thread.ofVirtual().name("V-@MointorInit").unstarted(() -> {
             Map<Method, Monitor> monitorMap = annotationScanner.scanMethodAnnotation(Monitor.class);
             annotationCache.putAll(monitorMap);
         }).start();

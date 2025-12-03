@@ -38,7 +38,7 @@ public class UnifiedResourceInjector {
 
     @PostConstruct
     public void init() {
-        Thread.ofVirtual().name("UnifiedResourceInjectorInit").unstarted(() -> {
+        Thread.ofVirtual().name("V-@InjectInit").unstarted(() -> {
             Map<Class<?>, List<Field>> classListMap = annotationScanner.scanFieldAnnotation(InjectKey.class);
             classListMap.forEach((key, value) -> INJECT_KEY_CACHE.put(key, value.getFirst()));
         }).start();

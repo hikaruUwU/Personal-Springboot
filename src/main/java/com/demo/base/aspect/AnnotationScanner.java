@@ -52,6 +52,8 @@ public class AnnotationScanner {
             } catch (ClassNotFoundException ignored) {
             }
         });
+        log.info("scanned FieldAnnotation, {} record(s) founded", result.size());
+
         return result;
     }
 
@@ -72,6 +74,7 @@ public class AnnotationScanner {
             } catch (ClassNotFoundException ignored) {
             }
         });
+        log.info("scanned MethodAnnotation, {} record(s) founded", resultMap.size());
         return resultMap;
     }
 }

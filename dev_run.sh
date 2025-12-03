@@ -50,7 +50,7 @@ if [ -z "$JAR_PATH" ]; then
 fi
 
 echo "Starting artifact: $JAR_PATH"
-java -jar "$JAR_PATH"
+java -jar -XX:+UseG1GC -XX:TieredStopAtLevel=4 -Xms1g -Xmx1g "$JAR_PATH"
 
 echo "------------------------------------------------"
 echo "---Finished Update Auto-Build Process ---"

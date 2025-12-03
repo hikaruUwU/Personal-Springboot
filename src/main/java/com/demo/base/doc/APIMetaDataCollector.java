@@ -29,7 +29,7 @@ public class APIMetaDataCollector implements ApplicationListener<ContextRefreshe
     @Override
     @SuppressWarnings("deprecation")
     public void onApplicationEvent(@Nonnull ContextRefreshedEvent event) {
-        Thread.ofVirtual().name("V-APICollector").unstarted(() -> {
+        Thread.ofVirtual().name("V-APIScanner").unstarted(() -> {
             RequestMappingHandlerMapping handlerMapping = event.getApplicationContext().getBean(RequestMappingHandlerMapping.class);
             handlerMapping.getHandlerMethods().forEach((mapping, handlerMethod) -> {
                 if (handlerMethod.getBeanType().isAnnotationPresent(RestController.class)) {
