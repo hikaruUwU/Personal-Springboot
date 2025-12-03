@@ -92,12 +92,9 @@ Switch user to projectRunnerOnlyUser for security and install middlewares & depe
 
 Create a bare repository and set user's shell to git shell.
 
-Move post-receive to your test env linux and modify ${DEPLOY_DIR}.
+Manual checkout to project/instance dir.
 
-Manual git --work-tree=${DEPLOY_DIR} checkout -f once, chown -R runner:runner(git:git / projectOnlyUser) to currentWorkDIR.
+Run init.sh.
 
-Move project.service to /etc/systemd/system and modify WorkingDirectory & Environment to register it as a system service.(this project using NVM).
+Local Git add remote project@dev.machine:repo.
 
-Git add remote project@dev.machine:repo.
-
-Now every git pull to dev.machine will trigger hot updating.
