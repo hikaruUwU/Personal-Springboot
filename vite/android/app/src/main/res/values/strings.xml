@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">basement</string>
+    <string name="title_activity_main">basement</string>
+    <string name="package_name">project.sekai.base</string>
+    <string name="custom_url_scheme">project.sekai.base</string>
+</resources>
