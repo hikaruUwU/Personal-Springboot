@@ -13,7 +13,7 @@
               :disabled="isLoading"
               @focus="isUsernameFocused = true"
               @blur="isUsernameFocused = false"
-              placeholder="请输入用户名 (admin/user)"
+              placeholder="请输入用户名"
               required
           />
           <span class="input-border"></span>
@@ -28,9 +28,8 @@
               :disabled="isLoading"
               @focus="isPasswordFocused = true"
               @blur="isPasswordFocused = false"
-              placeholder="请输入密码 (123456)"
+              placeholder="请输入密码"
               required
-              minlength="6"
           />
           <span class="input-border"></span>
         </div>
@@ -56,8 +55,9 @@
 
 <script setup lang="ts">
 import {ref} from 'vue';
+import {login} from "../service/http.ts";
+import {notifySuccess} from "../util/noticePopup.ts";
 
-// --- 状态管理 ---
 const username = ref('');
 const password = ref('');
 const isLoading = ref(false);
@@ -68,49 +68,12 @@ const messageType = ref<'success' | 'error'>('error');
 const isUsernameFocused = ref(false);
 const isPasswordFocused = ref(false);
 
-// --- 模拟异步登录函数 ---
-const mockLogin = (user: string, pass: string): Promise<boolean> => {
-  return new Promise((resolve) => {
-    // 模拟网络延迟
-    setTimeout(() => {
-      // 检查成功条件
-      const success = (user === 'admin' || user === 'user') && pass === '123456';
-      resolve(success);
-    }, 1500); // 1.5秒延迟
-  });
-};
-
-// --- 登录处理函数 ---
 const handleLogin = async () => {
-  if (isLoading.value) return;
+  await login(username.value,password.value)
+  notifySuccess("登入成功")
+}
 
-  // 1. 清除旧消息
-  message.value = '';
-  isLoading.value = true;
 
-  try {
-    // 2. 模拟请求
-    const success = await mockLogin(username.value, password.value);
-
-    // 3. 处理结果
-    if (success) {
-      message.value = '登录成功！欢迎回来。';
-      messageType.value = 'success';
-      // 可以在这里执行路由跳转等操作
-    } else {
-      message.value = '登录失败：账号或密码不正确，请重试。';
-      messageType.value = 'error';
-    }
-  } catch (err) {
-    // 模拟网络错误/其他异常
-    console.error(err);
-    message.value = '登录失败：系统异常，请稍后再试。';
-    messageType.value = 'error';
-  } finally {
-    // 4. 结束加载
-    isLoading.value = false;
-  }
-};
 </script>
 
 <style scoped lang="scss">

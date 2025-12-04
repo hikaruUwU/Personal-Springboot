@@ -7,7 +7,7 @@ import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 
 const proxy: Record<string, ProxyOptions> = {
     '/api': {
-        target: 'http://127.0.0.1:80',
+        target: 'http://192.168.0.115:8080',
         changeOrigin: true,
         ws: true,
         rewrite: path => path.replace(/^\/api/, ''),
@@ -43,7 +43,7 @@ export default defineConfig({
     },
     build:{
         emptyOutDir: true,
-        outDir: '../src/main/resources/static'
+        //outDir: '../src/main/resources/static'
         //outDir: 'dist'
     }
 })

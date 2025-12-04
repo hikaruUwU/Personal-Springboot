@@ -2,7 +2,7 @@ import type {AxiosInstance, AxiosResponse, InternalAxiosRequestConfig} from 'axi
 import axios from 'axios'
 
 const instance: AxiosInstance = axios.create({
-    baseURL: '/api/api',
+    baseURL: 'http://192.168.0.115:8080',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
