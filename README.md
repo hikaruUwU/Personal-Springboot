@@ -33,6 +33,8 @@ This is the Spring Boot backend template, pre-configured with core dependencies 
 
 The frontend project is set up using Vite for a fast development experience and TypeScript for code robustness, including basic codes.
 
+(Mobile APP supported, using npx cap)
+
 * **Build Tool:** **Vite** is used for its blazing-fast cold start and instant Hot Module Replacement (HMR).
 * **Language:** **TypeScript**
 * **Core Dependencies (via npm):**
